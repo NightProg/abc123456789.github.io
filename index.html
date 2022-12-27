@@ -1,0 +1,242 @@
+<html lang="en"><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <style type="text/css">
+        body {
+            background-color: #3FBA54;
+        }
+
+        hr {
+            height: 1px;
+            border: 0px;
+            background: #ffffff;
+        }
+    </style>
+
+    <title>mope.io</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Survive and climb the food chain in mopeio, the hit browser game!">
+    <meta name="keywords" content="mope, mope.io, mopeio,io games, .io, spaceships, browser game, html game, html5 game, agario, diepio, flash game, space, multiplayer">
+
+    <meta name="google-site-verification" content="HjdDaF_uw12IxXRm3hOS03tqv9QW8Lj5b74mlJGsRz0">
+    <meta property="og:image" content="./img/share_banner.jpg">
+    <meta property="og:image:type" content="image/jpg">
+    <meta property="og:image:width" content="1263">
+    <meta property="og:image:height" content="707">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="robots" content="index, follow">
+    <meta name="revisit-after" content="3 days">
+    <meta name="googlebot" content="all">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="stylesheet" href="./main.css">
+    <link rel="shortcut icon" type="image/x-icon" href="./skins/mouse.png">
+    <script async="" src="https://www.google-analytics.com/analytics.js"></script><script data-cfasync="false" type="text/javascript">
+
+        function getQueryParams(qs) {
+            qs = qs.split("+").join(" ");
+            var params = {},
+                tokens,
+                re = /[?&]?([^=]+)=([^&]*)/g;
+            while ((tokens = re.exec(qs))) {
+                params[decodeURIComponent(tokens[1])] = decodeURIComponent(tokens[2]);
+            }
+            return params;
+        }
+        var $_GET = getQueryParams(document.location.search);
+
+        //read link/ app flags
+        var isMobileAppIOS = $_GET["mobileios"] > 0;
+        var isMobileAppAndroid = $_GET["mobileAndroid"] > 0;
+        var isMobileApp = isMobileAppIOS || isMobileAppAndroid;
+        if (isMobileApp) {
+            console.log("Mobile App detected! (" + (isMobileAppIOS ? "IOS" : "Android") + ")");
+        }
+
+
+    </script>
+
+</head>
+
+<body style="">
+    <div id="gameAreaWrapper">
+        <div class="endscreen" id="endScreen" style="display: none; margin-top: 0px;"></div>
+        <input id="chatinput" type="text" class="chat-input" placeholder="Chat here..." maxlength="175" style="margin-top: 330px; visibility: hidden;">
+        <canvas tabindex="1" id="gCanvas" width="1920" height="950" style="width: 1536px; height: 760px;"></canvas>
+
+    </div>
+    <div id="connecting" style="height: 170px; visibility: hidden;">
+        <div style="height:100px;width:100px;margin: 0 auto;">
+            <img class="conimg" src="./skins/mouse.png" width="100px">
+        </div>
+        <p>Connecting...</p>
+        <p id="txtServer" style="font-size:16px;">(EUROPE 1)</p>
+    </div>
+
+
+    
+    <div>
+        <div id="my-content-2" style="display:none; visibility:hidden;">
+        </div>
+    </div>
+
+    <div id="startMenuWrapper" style="display: block;">
+        <div id="updates">
+            <div id="updatesDiv">
+                <h2>December 17: Balancing.</h2>
+                <ul>
+                    <li>-NERF : Lemming damage has been lowered and a anti teaming system has been implemented against
+                        it.</li>
+                    <li>
+                        -NERF : Nerfed Christmas Tree, Still as good but not as OP.
+                    </li>
+                    <li>-REWORKED : BD has completly been reworked, FLY HIGH replaced with multi fire shot :
+                        <p>--3 FIRE SHOT AT 20M</p>
+                        <p>--4 FIRE SHOT AT 40M</p>
+                        <p>--5 FIRE SHOT AT 75M</p>
+                        This is a case to fight against teaming (flying high and letting teammates finish off other BD.)
+                    </li>
+                    <li>-BUFF : Buffed Lava Whale speed.</li>
+
+                </ul>
+                <h2>December 16: Pre-Christmas!</h2>
+                <ul>
+                    <li>-Merry Future Christmas to our players, ever since we started 3 months ago, we have an amazing
+                        community and proud to see it still standing!</li>
+                    <li>-NEW : Lemming and Christmas items!</li>
+                    <img src="./img/upd_christmas.PNG" width="100%" height="auto">
+                    <li>-Lemming: Animal for CHRISTMAS only, unlockable at apex tier, lemming is an strong snowball
+                        enjoyer!</li>
+                    <li>-Christmas Tree: Spawns Randomly in the map every XXX, after spawning, it will charge up and
+                        throw in treats and Gifts!</li>
+                    <li>-Christmas Food: Spawns anywhere in the map, during the Christmas Tree event, it will spawn near
+                        it and alot will.</li>
+                    <li>-HINT : Seek for Santa, he might YEET you some gifts to enjoy!</li>
+                    <li>-FIX : Sea Monster now acts differently (fixes bug in arena.)</li>
+                    <li>-FIX : Animals able to go out of arena after arena ends, could confuse other arenas.</li>
+                    <li>-BUFF&amp;NERF : Tiger now recharges ability slower (prev 5s,now 8s) , Tiger Rares have been buffed.
+                    </li>
+                    <li>-BUFF : T-REX now does slightly more damage</li>
+                    <li>-NERF : Fox can't kick out Apex tier animals with ability.</li>
+                    <li>-REWORKED : Golden Eagle has been reworked, now grabs every animal, will be slow and ability
+                        will take longer to recharge when grabbing an apex animal, is now slightly rarer and has normal
+                        size.</li>
+                </ul>
+
+
+
+            </div>
+            <div id="ytDiv">
+                <h2>
+                    Tell us your ideas/bugs on discord:<br>
+                    <a href="https://discord.gg/4yZCGETucK" target="_blank">OUR DISCORD</a>
+                </h2>
+                <h2>-------------------</h2>
+                <h2>FOR ANY ISSUE PLEASE CONTACT US AT :</h2>
+                <h2>better-mope@hotmail.com</h2>
+
+                <br>
+
+            </div>
+        </div>
+        <div id="startMenu" style="visibility: visible;">
+            <div id="mopeMenu">
+
+                <img id="logo" src="https://media.discordapp.net/attachments/371011006740037653/1044685640094199849/logo.png" width="350px" height="99px">
+                <button style="display: none;" class="gmButton" id="gmButton_FFA" disabled="">
+                    FFA<br>
+                </button>
+                <button style="display: none;" class="gmButton" id="gmButton_HG">
+                    Hunger<br>
+                    Games<br>
+                    <!--</button>
+                
+                    <button class="gmButton" id="gmButton_1V1TOUR">
+                    1 VS 1<br>
+                    Tournament<br>
+                    -->
+                </button>
+                <select id="normalServerSelect"><option disabled="" class="normalServerSelectList">EUROPE</option><option class="normalServerSelectList">EUROPE 1 [68 players ]</option></select>
+
+                <div id="onconnectDiv" style="visibility: visible;">
+                    <br>
+
+
+                    <div id="nickInputContainer" style="display: block;">
+                        <input id="nickInput" autofocus="" placeholder="Your name" maxlength="15" style="width: 100%; height: 40px; line-height: 36px;">
+                        <a>
+
+                            <button id="startButton">Play</button>
+                        </a>
+
+                    </div>
+
+                    <div class="optionsBtn">
+                        <button id="settingsButton" class="button" type="submit" style="background-color:transparent; border-color:transparent;">
+                            <img src="./img/settings.png" width="30" height="30">
+                        </button>
+                    </div>
+                    <div id="captcha-1" style="display: none;"><iframe src="https://newassets.hcaptcha.com/captcha/v1/48ebaaf/static/hcaptcha.html#frame=checkbox&amp;id=08ugibyo7r0n&amp;host=old-mope.netlify.app&amp;sentry=true&amp;reportapi=https%3A%2F%2Faccounts.hcaptcha.com&amp;recaptchacompat=true&amp;custom=false&amp;hl=en&amp;tplinks=on&amp;sitekey=f8c53026-dfdf-4214-882b-223aab09ec1c&amp;theme=light&amp;origin=https%3A%2F%2Fold-mope.netlify.app" tabindex="0" frameborder="0" scrolling="no" title="Widget containing checkbox for hCaptcha security challenge" data-hcaptcha-widget-id="08ugibyo7r0n" data-hcaptcha-response="" style="width: 303px; height: 78px; overflow: hidden;"></iframe><textarea id="g-recaptcha-response-08ugibyo7r0n" name="g-recaptcha-response" style="display: none;"></textarea><textarea id="h-captcha-response-08ugibyo7r0n" name="h-captcha-response" style="display: none;"></textarea></div>
+
+                    <p id="spawnXpLabel" style="display: block; opacity: 1;">You'll spawn with +419 XP!</p>
+                    <p id="serverResponse" style="display: none; opacity: 0;"></p>
+
+                    <a class="advert" href="https://discord.gg/4yZCGETucK" width="300px" height="180px" target="_blank">
+                        <img src="./img/banner.png" width="100%" height="100%"></a>
+
+                </div>
+                <div id="optionsDiv" style="display: none;">
+                    <button id="closeBut" type="submit" class="button" style="background-color:transparent; border-color:transparent;">
+                        <img src="./img/x.png" width="35" height="35">
+                    </button>
+                    <!-- 
+                <h3>Region/Server:</h3>
+                <select id="regionSelect">
+                    <option disabled="">LOADING SERVERS..</option>
+                </select>
+                <select id="serverSelect">
+                    <option disabled="">LOADING SERVERS..</option>
+                
+                </select>
+                -->
+                    <h3>Options:</h3>
+                    <div id="optionsContainer">
+
+                    <label><input type="checkbox" id="options_noImages"><span style="color: black;" '="">No Animal images  </span></label><label><input type="checkbox" id="options_noNames"><span style="color: black;" '="">No Names &amp; Chat  </span></label><label><input type="checkbox" id="options_lowGraphics"><span style="color: black;" '="">Use Low graphics </span></label><label><input type="checkbox" id="options_disableSnowFall"><span style="color: black;" '="">Disable Snowfall </span></label><label><input type="checkbox" id="options_noXpPopup"><span style="color: black;" '="">Don't show +XP popups</span></label></div>
+                    <br>
+                    <a>
+                        <button id="btnSpectate" style="display:block">Spectate</button>
+                    </a>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div id="rightSide" style="display: none;">
+            <div id="appsDiv">
+                <a id="appAdIOS" href="https://goo.gl/ofAUPJ" target="_blank">
+                    <img src="./img/appAd_ios.png" width="132" height="82" alt="GET THE IOS APP!">
+                </a>
+                <a id="appAdAndroid" href="https://goo.gl/i3xQWQ" target="_blank">
+                    <img src="./img/appAd_and.png" width="132" height="52" alt="GET THE Android APP!">
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script>
+        document.write("<script src='config.js?x=" + (+new Date()) + "'></" + "script>");
+        document.write("<script src='client.js?x=" + (+new Date()) + "'></" + "script>");
+    </script><script src="config.js?x=1672176119835"></script><script src="client.js?x=1672176119836"></script>
+    <script src="https://js.hcaptcha.com/1/api.js?onload=loadedCaptcha&amp;render=explicit" async="" defer=""></script>
+
+
+
+
+
+
+
+<div id="epicpopup" style="display: none; position: absolute; padding: 8px; font: bold 17px Arial; top: 190px; left: 50%; text-align: center; background: rgba(0, 255, 0, 0.8); border: 6px outset green; border-radius: 8px; color: black; user-select: none; pointer-events: none; transform: translate(-50%, -50%); z-index: 2147483647;"></div><div id="notif" style="display: none; position: absolute; padding: 8px; font: bold 17px Arial; top: 256px; right: 16px; text-align: center; background: rgba(16, 172, 44, 0.6); border: 6px outset darkgreen; border-radius: 8px; color: black; user-select: none; pointer-events: none; z-index: 2147483647;">Auto Upgrade is ON</div><div id="epicstats" style="padding: 8px; font: bold 16px Arial; display: block; color: rgb(0, 0, 0); background: rgba(16, 172, 44, 0.6); position: absolute; border-radius: 8px; bottom: 38px; left: 12px; user-select: none; pointer-events: none; border: 6px outset darkgreen;">FPS: <u>58</u><br>Ping: <u>189 MS</u><br>Health: <u>Dead</u><br>Energy: <u>Dead</u><br>Time Alive: <u>02:14</u><br>Died with <u>1.2K</u> XP<br>To Next Animal: <u>18%</u><br>Spawning with: <u>419 XP</u></div><div style="display: none; padding: 8px; font: bold 17px Arial; position: absolute; background: rgba(16, 172, 44, 0.3); border: 6px outset darkgreen; border-radius: 8px; top: 20px; left: 245px; text-align: left; color: black; user-select: none; pointer-events: none;"></div><div id="versionDisplay" style="padding: 3px; font: bold 14px Arial; display: block; color: rgb(0, 0, 0); background: rgba(0, 255, 255, 0.6); position: absolute; border-radius: 8px; top: 10px; left: 50%; transform: translate(-50%, 0px); user-select: none; pointer-events: none; border: 6px outset skyblue;"><u>Epic Modpack LOCAL</u></div><div id="options" style="padding: 8px; font: bold 16px Arial; text-align: right; display: none; color: rgb(0, 0, 0); background: rgba(16, 172, 44, 0.6); position: absolute; border-radius: 8px; bottom: 100px; border: 6px outset darkgreen; right: 12px; z-index: 10000; max-height: 300px; overflow: auto;"><center><u>Epic Modpack Options</u><br>Press <u>KeyE</u> to toggle menu</center><br>Name Color<input id="nameon" type="checkbox" style="position: relative;"><input id="namecolor" type="text" spellcheck="false" style="max-width: 80px;text-align: center" value="orange"><br>Outline Color<input id="outlineon" type="checkbox" style="position: relative;"><input id="outlinecolor" type="text" spellcheck="false" style="max-width: 80px;text-align: center" value="orange"><br>Modpack Users Color<input id="otherson" type="checkbox" style="position: relative;"><input id="otherscolor" type="text" spellcheck="false" style="max-width: 80px;text-align: center" value="orange"><br>Leaderboard Colors<input id="lbcolor" type="checkbox" style="position: relative;"><br><br>Player Indicators<input id="indicators" type="checkbox" style="position: relative;"><br>Prey Color <input id="preycolor" type="text" spellcheck="false" style="max-width: 80px;text-align: center" value="#4AE05E"><br>Predator Color <input id="predatorcolor" type="text" spellcheck="false" style="max-width: 80px;text-align: center" value="#EF3C31"><br>Neutral Color <input id="neutralcolor" type="text" spellcheck="false" style="max-width: 80px;text-align: center" value="#BF40BF"><br><button type="button" onclick="if (confirm('Are you sure?')) resetIndicators();">Reset Indicators to default</button><br><br>Auto Upgrade<input id="autoupgrade" type="checkbox" style="position: relative;"><br>Toggle Upgrade Menu<input id="togglechoice" type="text" spellcheck="false" style="max-width: 80px;text-align: center" value="Home" onkeydown="formatCode(event, this)"><br>Generate Alias <input id="aliasKey" type="text" spellcheck="false" style="max-width: 80px;text-align: center" value="Backslash" onkeydown="formatCode(event, this)"><br>Ignore Players <input id="ignoreplayers" type="text" spellcheck="false" style="max-width: 80px;text-align: center" value="KeyO" onkeydown="formatCode(event, this)"><br>Unignore Players <input id="unignoreplayers" type="text" spellcheck="false" style="max-width: 80px;text-align: center" value="KeyP" onkeydown="formatCode(event, this)"><br><br>Toggle Option Menu <input id="toggleMenuKey" type="text" spellcheck="false" style="max-width: 80px;text-align: center" value="KeyE" onkeydown="formatCode(event, this)"><br>Minimize Menu instead of Hiding<input id="miniokay" type="checkbox" style="position: relative;"><br><br>Show Version Display<input id="versiond" type="checkbox" style="position: relative;"><br>Show Statistics<input id="stats" type="checkbox" style="position: relative;"><br><br><button type="button" onclick="if (confirm('Are you sure?')) resetOptions();">RESET ALL OPTIONS TO DEFAULT</button></div><div id="minimizedOptions" style="padding: 8px; font: bold 16px Arial; text-align: right; display: block; color: rgb(0, 0, 0); background: rgba(16, 172, 44, 0.6); position: absolute; border-radius: 8px; bottom: 100px; border: 6px outset darkgreen; right: 12px; user-select: none; pointer-events: none; z-index: 10000;"><center>Press <u>KeyE</u> to toggle menu</center></div><div id="skinswitcher" style="padding: 8px; font: bold 16px Arial; text-align: right; display: none; color: rgb(0, 0, 0); background: rgba(16, 180, 44, 0.9); position: absolute; border-radius: 8px; top: 50%; border: 6px outset darkgreen; left: 50%; transform: translate(-50%, -50%); max-width: 40%; width: 40%; z-index: 10000; max-height: 80%; height: 80%; overflow: auto;"><img src="./img/x.png" draggable="false" width="35" height="35" style="position: sticky;top: 10px;right: 10px;cursor: pointer;z-index: 10001;" onclick="document.getElementById('skinswitcher').style.display = 'none';"><button type="button" id="resetskins" style="padding: 8px; display: block; color: rgb(0, 0, 0); background: rgba(16, 172, 44, 0.6); position: absolute; border-radius: 8px; top: 10px; left: 10px; border: 6px outset darkgreen; cursor: pointer; z-index: 10000; font: bold 13px Arial;" onclick="if (confirm('Are you sure you want to reset ALL skins to default?'))setSkinValues(true)" onmousedown="document.getElementById('resetskins').style.borderStyle = 'inset'" onmouseup="document.getElementById('resetskins').style.borderStyle = 'outset'"><u>RESET ALL SKINS</u></button><center><div style="font-size: 20px"><u>Epic Modpack Skin Switcher</u></div><br><button type="button" onclick="switchBiomeTab(0);">Land Biome</button> <button type="button" onclick="switchBiomeTab(1);">Ocean Biome</button> <button type="button" onclick="switchBiomeTab(2);">Arctic Biome</button> <button type="button" onclick="switchBiomeTab(3);">Volcano Biome</button><br><br><div style="font: Arial 15px">Presets:</div><br><button type="button" onclick="if (confirm('Are you sure?')) setSkinPreset(0);">Black Animals</button><div id="landskins" style="display: block;"><br>Mouse<br><img src="https://gitlab.teddybear.pro/TeddyBearX/tb-mods-mopeio/-/raw/main/tbmods/mope/skins/volcanic/black-mouse.png" id="mouseimg" draggable="false" width="100" height="100"><br><input id="mouseurl" type="text" spellcheck="false" value="https://old-mope.netlify.app/skins/mouse.png" style="width: 400px;text-align: center"><br><br>Rabbit<br><img src="https://gitlab.teddybear.pro/TeddyBearX/tb-mods-mopeio/-/raw/main/tbmods/mope/skins/volcanic/black-rabbit.png" id="rabbitimg" draggable="false" width="100" height="100"><br><input id="rabbiturl" type="text" spellcheck="false" value="https://old-mope.netlify.app/skins/rabbit.png" style="width: 400px;text-align: center"><br><br>Pig<br><img src="https://gitlab.teddybear.pro/TeddyBearX/tb-mods-mopeio/-/raw/main/tbmods/mope/skins/volcanic/black-pig.png" id="pigimg" draggable="false" width="100" height="100"><br><input id="pigurl" type="text" spellcheck="false" value="https://old-mope.netlify.app/skins/pig.png" style="width: 400px;text-align: center"><br><br>Mole<br><img src="https://gitlab.teddybear.pro/TeddyBearX/tb-mods-mopeio/-/raw/main/tbmods/mope/skins/volcanic/black-mole.png" id="moleimg" draggable="false" width="100" height="100"><br><input id="moleurl" type="text" spellcheck="false" value="https://old-mope.netlify.app/skins/mole.png" style="width: 400px;text-align: center"><br><br>Pigeon<br><img src="https://old-mope.netlify.app/skins/pigeon/0/pigeon.png" id="pigeonimg" draggable="false" width="100" height="100"><br><input id="pigeonurl" type="text" spellcheck="false" value="https://old-mope.netlify.app/skins/pigeon/0/pigeon.png" style="width: 400px;text-align: center"><br><br>Deer<br><img src="https://gitlab.teddybear.pro/TeddyBearX/tb-mods-mopeio/-/raw/main/tbmods/mope/skins/volcanic/black-deer.png" id="deerimg" draggable="false" width="100" height="100"><br><input id="deerurl" type="text" spellcheck="false" value="https://old-mope.netlify.app/skins/deer.png" style="width: 400px;text-align: center"><br><br>Fox<br><img src="https://gitlab.teddybear.pro/TeddyBearX/tb-mods-mopeio/-/raw/main/tbmods/mope/skins/volcanic/black-fox.png" id="foximg" draggable="false" width="100" height="100"><br><input id="foxurl" type="text" spellcheck="false" value="https://old-mope.netlify.app/skins/fox.png" style="width: 400px;text-align: center"><br><br>Hedgehog<br><img src="https://old-mope.netlify.app/skins/hedgehog.png" id="hedgehogimg" draggable="false" width="100" height="100"><br><input id="hedgehogurl" type="text" spellcheck="false" value="https://old-mope.netlify.app/skins/hedgehog.png" style="width: 400px;text-align: center"><br><br>Zebra<br><img src="https://gitlab.teddybear.pro/TeddyBearX/tb-mods-mopeio/-/raw/main/tbmods/mope/skins/volcanic/black-zebra.png" id="zebraimg" draggable="false" width="100" height="100"><br><input id="zebraurl" type="text" spellcheck="false" value="https://old-mope.netlify.app/skins/zebra.png" style="width: 400px;text-align: center"><br><br>Donkey<br><img src="https://gitlab.teddybear.pro/TeddyBearX/tb-mods-mopeio/-/raw/main/tbmods/mope/skins/volcanic/black-donkey.png" id="donkeyimg" draggable="false" width="100" height="100"><br><input id="donkeyurl" type="text" spellcheck="false" value="https://old-mope.netlify.app/skins/donkey.png" style="width: 400px;text-align: center"><br><br>Cheetah<br><img src="https://gitlab.teddybear.pro/TeddyBearX/tb-mods-mopeio/-/raw/main/tbmods/mope/skins/volcanic/black-cheetah.png" id="cheetahimg" draggable="false" width="100" height="100"><br><input id="cheetahurl" type="text" spellcheck="false" value="https://old-mope.netlify.app/skins/bigcat/cheetah.png" style="width: 400px;text-align: center"><br><br>Giraffe<br><img src="https://gitlab.teddybear.pro/TeddyBearX/tb-mods-mopeio/-/raw/main/tbmods/mope/skins/volcanic/black-giraffe.png" id="giraffeimg" draggable="false" width="100" height="100"><br><input id="giraffeurl" type="text" spellcheck="false" value="https://old-mope.netlify.app/skins/giraffe.png" style="width: 400px;text-align: center"><br><br>Lion<br><img src="https://gitlab.teddybear.pro/TeddyBearX/tb-mods-mopeio/-/raw/main/tbmods/mope/skins/volcanic/black-lion.png" id="lionimg" draggable="false" width="100" height="100"><br><input id="lionurl" type="text" spellcheck="false" value="https://old-mope.netlify.app/skins/lion.png" style="width: 400px;text-align: center"><br><br>Gorilla<br><img src="https://gitlab.teddybear.pro/TeddyBearX/tb-mods-mopeio/-/raw/main/tbmods/mope/skins/volcanic/black-gorilla.png" id="gorillaimg" draggable="false" width="100" height="100"><br><input id="gorillaurl" type="text" spellcheck="false" value="https://old-mope.netlify.app/skins/gorilla.png" style="width: 400px;text-align: center"><br><br>Toco Toucan<br><img src="https://old-mope.netlify.app/skins/toucan/0/toucan.png" id="tocotoucanimg" draggable="false" width="100" height="100"><br><input id="tocotoucanurl" type="text" spellcheck="false" value="https://old-mope.netlify.app/skins/toucan/0/toucan.png" style="width: 400px;text-align: center"><br><br>Bear<br><img src="https://gitlab.teddybear.pro/TeddyBearX/tb-mods-mopeio/-/raw/main/tbmods/mope/skins/volcanic/black-bear.png" id="bearimg" draggable="false" width="100" height="100"><br><input id="bearurl" type="text" spellcheck="false" value="https://old-mope.netlify.app/skins/bear/0.png" style="width: 400px;text-align: center"><br><br>Cobra<br><img src="https://gitlab.teddybear.pro/TeddyBearX/tb-mods-mopeio/-/raw/main/tbmods/mope/skins/volcanic/black-cobra.png" id="cobraimg" draggable="false" width="100" height="100"><br><input id="cobraurl" type="text" spellcheck="false" value="https://old-mope.netlify.app/skins/cobra.png" style="width: 400px;text-align: center"><br><br>Cobra Ability<br><img src="https://gitlab.teddybear.pro/TeddyBearX/tb-mods-mopeio/-/raw/main/tbmods/mope/skins/volcanic/black-cobra2.png" id="cobra_aimg" draggable="false" width="100" height="100"><br><input id="cobra_aurl" type="text" spellcheck="false" value="https://old-mope.netlify.app/skins/cobra2.png" style="width: 400px;text-align: center"><br><br>Croc<br><img src="https://gitlab.teddybear.pro/TeddyBearX/tb-mods-mopeio/-/raw/main/tbmods/mope/skins/volcanic/black-croc.png" id="crocimg" draggable="false" width="100" height="100"><br><input id="crocurl" type="text" spellcheck="false" value="https://old-mope.netlify.app/skins/croc.png" style="width: 400px;text-align: center"><br><br>Tiger<br><img src="https://gitlab.teddybear.pro/TeddyBearX/tb-mods-mopeio/-/raw/main/tbmods/mope/skins/volcanic/black-tiger.png" id="tigerimg" draggable="false" width="100" height="100"><br><input id="tigerurl" type="text" spellcheck="false" value="https://old-mope.netlify.app/skins/tiger/0/tiger.png" style="width: 400px;text-align: center"><br><br>Falcon<br><img src="https://old-mope.netlify.app/skins/falcon/0/falcon.png" id="falconimg" draggable="false" width="100" height="100"><br><input id="falconurl" type="text" spellcheck="false" value="https://old-mope.netlify.app/skins/falcon/0/falcon.png" style="width: 400px;text-align: center"><br><br>Rhino<br><img src="https://gitlab.teddybear.pro/TeddyBearX/tb-mods-mopeio/-/raw/main/tbmods/mope/skins/volcanic/black-rhino.png" id="rhinoimg" draggable="false" width="100" height="100"><br><input id="rhinourl" type="text" spellcheck="false" value="https://old-mope.netlify.app/skins/rhino.png" style="width: 400px;text-align: center"><br><br>Eagle<br><img src="https://old-mope.netlify.app/skins/eagle/0/eagle.png" id="eagleimg" draggable="false" width="100" height="100"><br><input id="eagleurl" type="text" spellcheck="false" value="https://old-mope.netlify.app/skins/eagle/0/eagle.png" style="width: 400px;text-align: center"><br><br>Hippo<br><img src="https://gitlab.teddybear.pro/TeddyBearX/tb-mods-mopeio/-/raw/main/tbmods/mope/skins/volcanic/black-hippo.png" id="hippoimg" draggable="false" width="100" height="100"><br><input id="hippourl" type="text" spellcheck="false" value="https://old-mope.netlify.app/skins/hippo.png" style="width: 400px;text-align: center"><br><br>Boa Constrictor<br><img src="https://gitlab.teddybear.pro/TeddyBearX/tb-mods-mopeio/-/raw/main/tbmods/mope/skins/volcanic/black-boaConstrictor.png" id="boaimg" draggable="false" width="100" height="100"><br><input id="boaurl" type="text" spellcheck="false" value="https://old-mope.netlify.app/skins/boaConstrictor.png" style="width: 400px;text-align: center"><br><br>Boa Constrictor Ability<br><img src="https://gitlab.teddybear.pro/TeddyBearX/tb-mods-mopeio/-/raw/main/tbmods/mope/skins/volcanic/black-boaConstrictor2.png" id="boa_aimg" draggable="false" width="100" height="100"><br><input id="boa_aurl" type="text" spellcheck="false" value="https://old-mope.netlify.app/skins/boaConstrictor2.png" style="width: 400px;text-align: center"><br><br>Ostrich<br><img src="https://old-mope.netlify.app/skins/ostrich/ostrich.png" id="ostrichimg" draggable="false" width="100" height="100"><br><input id="ostrichurl" type="text" spellcheck="false" value="https://old-mope.netlify.app/skins/ostrich/ostrich.png" style="width: 400px;text-align: center"><br><br>Elephant<br><img src="https://gitlab.teddybear.pro/TeddyBearX/tb-mods-mopeio/-/raw/main/tbmods/mope/skins/volcanic/black-elephant.png" id="elephantimg" draggable="false" width="100" height="100"><br><input id="elephanturl" type="text" spellcheck="false" value="https://old-mope.netlify.app/skins/elephant.png" style="width: 400px;text-align: center"><br><br>Giant Spider<br><img src="https://old-mope.netlify.app/skins/giantSpider/0.png" id="spiderimg" draggable="false" width="100" height="100"><br><input id="spiderurl" type="text" spellcheck="false" value="https://old-mope.netlify.app/skins/giantSpider/0.png" style="width: 400px;text-align: center"><br><br>Dragon<br><img src="https://images-ext-1.discordapp.net/external/GI_sU8Csj0ar0aqypv9smBJhlsMp2o-TNDwIncbwVZ4/https/www.clipartmax.com/png/full/286-2860346_neondragon-mope-io-black-dragon-skin.png" id="dragonimg" draggable="false" width="100" height="100"><br><input id="dragonurl" type="text" spellcheck="false" value="https://old-mope.netlify.app/skins/dragon.png" style="width: 400px;text-align: center"><br><br>Trex<br><img src="https://old-mope.netlify.app/skins/trex/0/trex.png" id="treximg" draggable="false" width="100" height="100"><br><input id="trexurl" type="text" spellcheck="false" value="https://old-mope.netlify.app/skins/trex/0/trex.png" style="width: 400px;text-align: center"><br><br>Dino Monster<br><img src="https://old-mope.netlify.app/skins/dinomonster.png" id="dinoimg" draggable="false" width="100" height="100"><br><input id="dinourl" type="text" spellcheck="false" value="https://old-mope.netlify.app/skins/dinomonster.png" style="width: 400px;text-align: center"><br><br></div><div id="oceanskins" style="display: none;"><br>Shrimp<br><img src="https://old-mope.netlify.app/skins/shrimp.png" id="shrimpimg" draggable="false" width="100" height="100"><br><input id="shrimpurl" type="text" spellcheck="false" value="https://old-mope.netlify.app/skins/shrimp.png" style="width: 400px;text-align: center"><br><br>Trout<br><img src="https://old-mope.netlify.app/skins/trout.png" id="troutimg" draggable="false" width="100" height="100"><br><input id="trouturl" type="text" spellcheck="false" value="https://old-mope.netlify.app/skins/trout.png" style="width: 400px;text-align: center"><br><br>Crab<br><img src="https://old-mope.netlify.app/skins/crab.png" id="crabimg" draggable="false" width="100" height="100"><br><input id="craburl" type="text" spellcheck="false" value="https://old-mope.netlify.app/skins/crab.png" style="width: 400px;text-align: center"><br><br>Sea Horse<br><img src="https://old-mope.netlify.app/skins/seahorse.png" id="seahorseimg" draggable="false" width="100" height="100"><br><input id="seahorseurl" type="text" spellcheck="false" value="https://old-mope.netlify.app/skins/seahorse.png" style="width: 400px;text-align: center"></div><div id="arcticskins" style="display: none"><br>Chipmunk<br><img src="https://old-mope.netlify.app/skins/arctic/chipmunk.png" id="chipmunkimg" draggable="false" width="100" height="100"><br><input id="chipmunkurl" type="text" spellcheck="false" value="https://old-mope.netlify.app/skins/arctic/chipmunk.png" style="width: 400px;text-align: center"><br><br><br>Arctic Hare<br><img src="https://old-mope.netlify.app/skins/arctic/arctichare.png" id="arctichareimg" draggable="false" width="100" height="100"><br><input id="arctichareurl" type="text" spellcheck="false" value="https://old-mope.netlify.app/skins/arctic/arctichare.png" style="width: 400px;text-align: center"><br><br><br>Penguin<br><img src="https://old-mope.netlify.app/skins/arctic/penguin.png" id="penguinimg" draggable="false" width="100" height="100"><br><input id="penguinurl" type="text" spellcheck="false" value="https://old-mope.netlify.app/skins/arctic/penguin.png" style="width: 400px;text-align: center"><br><br><br>Seal<br><img src="https://old-mope.netlify.app/skins/arctic/seal.png" id="sealimg" draggable="false" width="100" height="100"><br><input id="sealurl" type="text" spellcheck="false" value="https://old-mope.netlify.app/skins/arctic/seal.png" style="width: 400px;text-align: center"><br><br><br>Reindeer<br><img src="https://old-mope.netlify.app/skins/arctic/reindeer.png" id="reindeerimg" draggable="false" width="100" height="100"><br><input id="reindeerurl" type="text" spellcheck="false" value="https://old-mope.netlify.app/skins/arctic/reindeer.png" style="width: 400px;text-align: center"><br><br><br>Arctic Fox<br><img src="https://old-mope.netlify.app/skins/arctic/arcticfox.png" id="arcticfoximg" draggable="false" width="100" height="100"><br><input id="arcticfoxurl" type="text" spellcheck="false" value="https://old-mope.netlify.app/skins/arctic/arcticfox.png" style="width: 400px;text-align: center"><br><br><br>Muskox<br><img src="https://old-mope.netlify.app/skins/arctic/muskox.png" id="muskoximg" draggable="false" width="100" height="100"><br><input id="muskoxurl" type="text" spellcheck="false" value="https://old-mope.netlify.app/skins/arctic/muskox.png" style="width: 400px;text-align: center"><br><br>Muskox Ability<br><img src="https://old-mope.netlify.app/skins/arctic/muskox2.png" id="muskox_aimg" draggable="false" width="100" height="100"><br><input id="muskox_aurl" type="text" spellcheck="false" value="https://old-mope.netlify.app/skins/arctic/muskox2.png" style="width: 400px;text-align: center"><br><br><br>Wolf<br><img src="https://old-mope.netlify.app/skins/arctic/wolf.png" id="wolfimg" draggable="false" width="100" height="100"><br><input id="wolfurl" type="text" spellcheck="false" value="https://old-mope.netlify.app/skins/arctic/wolf.png" style="width: 400px;text-align: center"><br><br><br>Snowy Owl<br><img src="https://old-mope.netlify.app/skins/snowyowl/snowyowl.png" id="snowyowlimg" draggable="false" width="100" height="100"><br><input id="snowyowlurl" type="text" spellcheck="false" value="https://old-mope.netlify.app/skins/snowyowl/snowyowl.png" style="width: 400px;text-align: center"><br><br><br>Snow Leopard<br><img src="https://old-mope.netlify.app/skins/arctic/snowleopard.png" id="snowleopardimg" draggable="false" width="100" height="100"><br><input id="snowleopardurl" type="text" spellcheck="false" value="https://old-mope.netlify.app/skins/arctic/snowleopard.png" style="width: 400px;text-align: center"><br><br><br>Walrus<br><img src="https://old-mope.netlify.app/skins/arctic/walrus.png" id="walrusimg" draggable="false" width="100" height="100"><br><input id="walrusurl" type="text" spellcheck="false" value="https://old-mope.netlify.app/skins/arctic/walrus.png" style="width: 400px;text-align: center"><br><br></div><div id="volcanoskins" style="display: none;"><br>Phoenix<br><img src="https://old-mope.netlify.app/skins//phoenix/0/phoenix.png" id="phoeniximg" draggable="false" width="100" height="100"><br><input id="phoenixurl" type="text" spellcheck="false" value="https://old-mope.netlify.app/skins/phoenix/0/phoenix.png" style="width: 400px;text-align: center"><br><br><br>Black Dragon<br><img src="https://old-mope.netlify.app/skins/blackdragon/blackdragon.png" id="bdimg" draggable="false" width="100" height="100"><br><input id="bdurl" type="text" spellcheck="false" value="https://old-mope.netlify.app/skins/blackdragon/blackdragon.png" style="width: 400px;text-align: center"><br><br></div></center></div><img id="openswitcher" title="Open Skin Switcher" src="https://www.clipartmax.com/png/full/286-2860346_neondragon-mope-io-black-dragon-skin.png" width="35" height="35" style="padding: 8px; display: block; color: rgb(0, 0, 0); background: rgba(16, 172, 44, 0.6); position: absolute; border-radius: 8px; bottom: 10px; right: 10px; border: 6px outset darkgreen; cursor: pointer; z-index: 10000;"><div style="background-color: rgb(255, 255, 255); border: 1px solid rgb(215, 215, 215); box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 4px; border-radius: 4px; left: auto; top: -10000px; z-index: -2147483648; position: absolute; transition: opacity 0.15s ease-out 0s; opacity: 0; visibility: hidden; display: block;" aria-hidden="true"><div style="position: relative; z-index: 1; width: 400px; height: 590px;"><iframe src="https://newassets.hcaptcha.com/captcha/v1/48ebaaf/static/hcaptcha.html#frame=challenge&amp;id=08ugibyo7r0n&amp;host=old-mope.netlify.app&amp;sentry=true&amp;reportapi=https%3A%2F%2Faccounts.hcaptcha.com&amp;recaptchacompat=true&amp;custom=false&amp;hl=en&amp;tplinks=on&amp;sitekey=f8c53026-dfdf-4214-882b-223aab09ec1c&amp;theme=light&amp;origin=https%3A%2F%2Fold-mope.netlify.app" frameborder="0" scrolling="no" title="Main content of the hCaptcha challenge" style="border: 0px; z-index: 2000000000; position: relative; width: 400px; height: 590px;"></iframe></div><div style="width: 100%; height: 100%; position: fixed; pointer-events: none; top: 0px; left: 0px; z-index: 0; background-color: rgb(255, 255, 255); opacity: 0.05; cursor: default;"></div><div style="border-width: 11px; position: absolute; pointer-events: none; margin-top: -11px; z-index: 1; right: 100%; top: 196.4px;"><div style="border-width: 10px; border-style: solid; border-color: transparent rgb(255, 255, 255) transparent transparent; position: relative; top: 10px; z-index: 1; display: block;"></div><div style="border-width: 11px; border-style: solid; border-color: transparent rgb(215, 215, 215) transparent transparent; position: relative; top: -11px; z-index: 0; display: block;"></div></div></div><div id="torrent-scanner-popup" style="display: none;"></div></body></html>
