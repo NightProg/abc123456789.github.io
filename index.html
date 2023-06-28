@@ -1,4 +1,7 @@
-<html lang="en"><head>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <style type="text/css">
         body {
@@ -15,7 +18,8 @@
     <title>mope.io</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="description" content="Survive and climb the food chain in mopeio, the hit browser game!">
-    <meta name="keywords" content="mope, mope.io, mopeio,io games, .io, spaceships, browser game, html game, html5 game, agario, diepio, flash game, space, multiplayer">
+    <meta name="keywords"
+        content="mope, mope.io, mopeio,io games, .io, spaceships, browser game, html game, html5 game, agario, diepio, flash game, space, multiplayer">
 
     <meta name="google-site-verification" content="HjdDaF_uw12IxXRm3hOS03tqv9QW8Lj5b74mlJGsRz0">
     <meta property="og:image" content="./img/share_banner.jpg">
@@ -30,8 +34,9 @@
     <meta name="twitter:card" content="summary_large_image">
 
     <link rel="stylesheet" href="./main.css">
-    <link rel="shortcut icon" type="image/x-icon" href="./skins/mouse.png">
-    <script async="" src="https://www.google-analytics.com/analytics.js"></script><script async="" src="https://www.google-analytics.com/analytics.js"></script><script data-cfasync="false" type="text/javascript">
+    <link rel="shortcut icon" type="image/x-icon" href="./skins/land/mouse.png">
+
+    <script data-cfasync="false" type="text/javascript">
 
         function getQueryParams(qs) {
             qs = qs.split("+").join(" ");
@@ -58,112 +63,225 @@
 
 </head>
 
-<body style="">
+<body>
+
     <div id="gameAreaWrapper">
-        <div class="endscreen" id="endScreen" style="display: none; margin-top: 0px;"></div>
-        <input id="chatinput" type="text" class="chat-input" placeholder="Chat here..." maxlength="175" style="margin-top: 330px; visibility: hidden;">
-        <canvas tabindex="1" id="gCanvas" width="1920" height="950" style="width: 1536px; height: 760px;"></canvas>
+        <div class="endscreen" id="endScreen" style="display:none">
+        </div>
+        <input id="chatinput" type="text" class="chat-input" placeholder="Chat here..." maxlength="35"
+            style="margin-top: 400px;">
+        <canvas tabindex="1" id="gCanvas" width="1680" height="900" style="width: 1680px; height: 900px;"></canvas>
 
     </div>
     <div id="connecting" style="height: 170px; visibility: hidden;">
         <div style="height:100px;width:100px;margin: 0 auto;">
-            <img class="conimg" src="./skins/mouse.png" width="100px">
+            <img class="conimg" src="./skins/land/mouse.png" width="100px">
         </div>
         <p>Connecting...</p>
-        <p id="txtServer" style="font-size:16px;">(EUROPE 1)</p>
+        <p id="txtServer" style="font-size:16px;"></p>
     </div>
 
 
-    
+    </div>
     <div>
         <div id="my-content-2" style="display:none; visibility:hidden;">
         </div>
     </div>
 
     <div id="startMenuWrapper" style="display: block;">
+        <div id="gameadsbanner"></div>
+
+
         <div id="updates">
             <div id="updatesDiv">
-                <h2>December 17: Balancing.</h2>
+                <h2>June 14 : Balancing</h2>
                 <ul>
-                    <li>-NERF : Lemming damage has been lowered and a anti teaming system has been implemented against
-                        it.</li>
-                    <li>
-                        -NERF : Nerfed Christmas Tree, Still as good but not as OP.
+                    <li>Overlord Sirius changes:</li>
+                    <ul>
+                        <li>Level 1 health regen has been nerfed to 0.45% health/second (prev 0.65% health/second)
+                        </li>
+                        <li>Level 2 health regen has been nerfed to 1.1% health/second (prev 1.55% health/second)
+                        </li>
+                        <li>Level 1 inferno has been nerfed, 1 less fireball.
+                        </li>
+                        <li>Level 2 inferno has been nerfed, 2.5x more recharge and 20% less damage.
+                        </li>
+                        <li>Flame thrower balanced, 1s recharge, a bit bigger, more speed, 2x more damage.</li>
+                        <li>Wingslap & tailslap does less damage against bds.</li>
+                        <li> Overlord Sirius speed back to normal(prev 10% less on upgrade)</li>
+                    </ul>
+                    <li>REWORK : Anti Kill Steal mechanic changed, any damager that has damaged less than 6% damage
+                        worth won't get
+                        any xp, damage worth buffed by 5x for same tier animals (prev 4x);</li>
+                    <li>NERF : yeti recharge time now takes 11 seconds (prev 6s)</li>
+                </ul>
+                <h2>June 10 : Balancing</h2>
+                <ul>
+                    <li>BUFF : on upgrade, if has enough xp for milestone, Overlord Sirius will get to upgrade a
+                        ability instantly.</li>
+                    <li>MISC : Fireballs will not affect to low tier animals (ex : if dragon can't kill mouse, mouse
+                        can't be fired.)</li>
+                    <li>MISC : low tier animals won't give health (ex : king crab killing a shrimp wont give health)
                     </li>
-                    <li>-REWORKED : BD has completly been reworked, FLY HIGH replaced with multi fire shot :
-                        <p>--3 FIRE SHOT AT 20M</p>
-                        <p>--4 FIRE SHOT AT 40M</p>
-                        <p>--5 FIRE SHOT AT 75M</p>
-                        This is a case to fight against teaming (flying high and letting teammates finish off other BD.)
-                    </li>
-                    <li>-BUFF : Buffed Lava Whale speed.</li>
+                    <li>NERF : health regeneration in holes is 5x slower than being outside holes</li>
+                    <li>FIX : Phoenix ability uncorrect ability setup.</li>
+                    <li>FIX : Fixed a bug where when an animal die due to meteorite fire, xp won't be attributed.</li>
+                    <li>NERF : Megalodon health nerfed by 25% and will stop dashing when an animal is grabbed</li>
+                    <li>TESTING : Anti-Steal system for monsters tier.</li>
+                    <li>MISC : We will be testing a few things, such as stabilizing the xp loss, we have changed the xp
+                        onkill/onrespawn again. (67% got on kill, 30% kept on death) (prev 25% kept on death/ 65% on
+                        kill)</li>
+                    <li>Overlord Sirius ability changes:</li>
+                    <ul>
+                        <li>Level 1 health regen has been nerfed to 0.65% health/second (prev 1% health/second)
+                        </li>
+                        <li>Level 2 health regen has been buffed to 1.5% health/second (prev 1.25% health/second)
+                        </li>
+                        <li>Level 2 inferno has been changed : 3 giant fireballs with fast rotation (prev 8 small
+                            fireballs),
+                            does way more damage
+                        </li>
+                        <li>Hell's fire ability has been replaced by flamethrower, unlockable by the thrusting fire
+                            branch.</li>
+                        <li>Shotgun Fireball damage & range has been buffed</li>
+                        <li>Fixed a bug where stronger tailslap was ranged, this was supposed to be for the offensive
+                            tailslap ability.</li>
+                        <li>Offensive tailslap recharge reduced by 10%</li>
+                        <li>Offensive tailslap does more damage to bds and slightly more to preys.</li>
+                        <li>Major Nerf for wingslaps and slights nerfs for tailslaps damage against same tier animals.
+                        </li>
+                        <li>Defensive tailslap damage against bds has been greatly buffed.</li>
+                        <li>Thrusting Fire Branch reload time has been lowered, making it a competitor to meteor.</li>
+                    </ul>
 
                 </ul>
-                <h2>December 16: Pre-Christmas!</h2>
+                <h2>June 6 : Overlord & balance</h2>
                 <ul>
-                    <li>-Merry Future Christmas to our players, ever since we started 3 months ago, we have an amazing
-                        community and proud to see it still standing!</li>
-                    <li>-NEW : Lemming and Christmas items!</li>
-                    <img src="./img/upd_christmas.PNG" width="100%" height="auto">
-                    <li>-Lemming: Animal for CHRISTMAS only, unlockable at apex tier, lemming is an strong snowball
-                        enjoyer!</li>
-                    <li>-Christmas Tree: Spawns Randomly in the map every XXX, after spawning, it will charge up and
-                        throw in treats and Gifts!</li>
-                    <li>-Christmas Food: Spawns anywhere in the map, during the Christmas Tree event, it will spawn near
-                        it and alot will.</li>
-                    <li>-HINT : Seek for Santa, he might YEET you some gifts to enjoy!</li>
-                    <li>-FIX : Sea Monster now acts differently (fixes bug in arena.)</li>
-                    <li>-FIX : Animals able to go out of arena after arena ends, could confuse other arenas.</li>
-                    <li>-BUFF&amp;NERF : Tiger now recharges ability slower (prev 5s,now 8s) , Tiger Rares have been buffed.
-                    </li>
-                    <li>-BUFF : T-REX now does slightly more damage</li>
-                    <li>-NERF : Fox can't kick out Apex tier animals with ability.</li>
-                    <li>-REWORKED : Golden Eagle has been reworked, now grabs every animal, will be slow and ability
-                        will take longer to recharge when grabbing an apex animal, is now slightly rarer and has normal
-                        size.</li>
+                    <li>BUFF : Meteorite does more damage.</li>
+                    <li>BUFF : Wing upgrades have been buffed.</li>
+                    <li>NERF : Defensive Tailslap damage nerfed against BD. </li>
+                    <li>REWORK : Phoenix ability changed, now dashes, added fly high for phoenix(only for normal
+                        phoenix.) </li>
+                    <li>REWORK : Megalodon isn't a rare anymore, but has been balanced with sea monster.</li>
+                    <li>NERF : Ice monster damage nerfed against same tier.</li>
+                    <li>NERF : Land Monster can't enter infernal biome. (cry loud and clear, bd fight campers!)</li>
+                    <li>BUFF : Dino Monster damage & fire resistance has been buffed.</li>
+                    <li>NERF : xp limit back at 10K. (prev 50K)</li>
                 </ul>
 
+                <h2>June 5 : fixes</h2>
+                <ul>
+                    <li>BUFF&NERF : Meteorite recharge time lowered, Does less damage.</li>
+                    <li>BUFF : OVERLORD hp buffed by 1.2x when upgrading. (prev 1.1x)</li>
+                    <li>REMOVED : Removed more damage on tailbite for bds. </li>
+                    <li>NERF : You get 65% xp of an animal when killing it prev(70%), you now keep 25% of your xp when
+                        dying(prev 30%), this ensure a stable xp system. </li>
+                    <li>BUFF : Now, there a 5 minute wait before unlocking next skill for Overlord Sirius (prev 15
+                        minutes)</li>
+                </ul>
+                <h2>June 4 : The Overlord Sirius rises..</h2>
+                <ul>
+                    <img width="100%" src="./img/overlord_update.png">
+                    <li>NEW: The Overlord Sirius. On the same tier as the Black Dragon, this animal can carve its
+                        own
+                        path and absolutely dominate the game! Do not let it live for too
+                        long, or it may become too strong!
+                    </li>
+                    <li>To become an Overlord Sirius, you will need to conquer the Infernal Heart, which is in the
+                        middle of the infernal volcano!</li>
+                    <li>The Infernal Heart is a part of the Overlord Sirius, keeping it safe and healing it, so
+                        defend
+                        it
+                        safe from outside foes!</li>
+                    <li>We thank Croccin for her hard work on the Overlord Sirius.</li>
+                    <li>NEW : Meatballs spawns when players die without any reason.</li>
+                    <li>MISC : Volcanos are now splitted everywhere.</li>
+                    <li>MISC : Middle Volcano gives more FOV</li>
+                    <li>MISC : Reworked xp needed on upgrade.</li>
+                    <li>MISC : Tailbites between bd's will not grant nor loose xp.</li>
+                    <li>REWORK&NERF&BUFF : Ice Monster speed in water and damage against prey has been nerfed but
+                        does
+                        more damage against same tier animals, changed unlocked ability.</li>
+                    <li>BUFF : Buffed xp on hunting (kills).</li>
+                    <li>BUFF : Bites, Tailbites give 3% of animal xp now , (prev 2%)</li>
+                    <li>BUFF : You get 70% of the animal xp you killed (prev 55%)</li>
+                    <li>BUFF : XP limit of tailbite changed, now limit is for tailbiting is 3.5x of the biter xp
+                        (prev
+                        2x of the biter xp)</li>
+                    <li>BUFF : Bies & Jungle monster has more fire resistance</li>
+                    <li>BUFF : Charges Ability has been changed to make rotation easier.</li>
+                    <li>BUFF : Yeti damage has been buffed.(by 27%)</li>
+                    <li>BUFF : Trex Speed buffed by 5% and TREX damage while grabbing animals has been buffed.(by
+                        25%)
+                    </li>
+                    <li>BUFF : Kraken dragging speed and whirlpool size has been buffed.</li>
 
-
+                    <li>NERF : You keep 30% of your xp when you die. (prev 35%)</li>
+                    <li>NERF : Animals that are 2x bigger than a spider web are not affected by them.</li>
+                    <li>COMPENSATION : 1v1 Feature Disabled for Overlord Sirius and due to xp rework, we compensated
+                        it
+                        with 1v1 allowed for
+                        elephant tier.
+                    </li>
+                    <li>NERF : Phoenix damage lowered by 25%.</li>
+                    <li>NERF : Megalodon damage has been slightly nerfed for preys, same tier damage has been
+                        greatly
+                        reduced, can't grab predators tiers and has an anti
+                        teaming system.</li>
+                    <li>FIX&NERF : Fixed when waves could push animals within the same tier, waves will push animals
+                        slower if theyre diving</li>
+                    <li>FIX : Same tier animals affecting others same tier animals with their waves while diving.
+                    </li>
+                    <li>NERF : Bat can't grab predators anymore.</li>
+                    <li>IMPORTANT : we added an secure system of restoring session if you disconnect, enable the
+                        Keep
+                        Same Session ID option, availalbe on options</li>
+                    <li>IMPORTANT : we added an system of saving data to recuparate players xp/animals if server
+                        crashes unexpectedly.</li>
+                </ul>
             </div>
             <div id="ytDiv">
                 <h2>
-                    Tell us your ideas/bugs on discord:<br>
-                    <a href="https://discord.gg/4yZCGETucK" target="_blank">OUR DISCORD</a>
+                    Tell us your ideas/bugs on discord:
+                    <a href="https://discord.gg/PvEwRZ8k49" target="_blank">OUR DISCORD</a>
                 </h2>
-                <h2>-------------------</h2>
-                <h2>FOR ANY ISSUE PLEASE CONTACT US AT :</h2>
-                <h2>better-mope@hotmail.com</h2>
-
-                <br>
 
             </div>
         </div>
+
+
+
         <div id="startMenu" style="visibility: visible;">
+            <img id="logo" src="./img/better_mope_logo.png" width="326px" height="151px">
             <div id="mopeMenu">
 
-                <img id="logo" src="https://media.discordapp.net/attachments/371011006740037653/1044685640094199849/logo.png" width="350px" height="99px">
-                <button style="display: none;" class="gmButton" id="gmButton_FFA" disabled="">
-                    FFA<br>
-                </button>
-                <button style="display: none;" class="gmButton" id="gmButton_HG">
-                    Hunger<br>
-                    Games<br>
-                    <!--</button>
+                <div> <button class="gmButton" id="gmButton_FFA">
+                        FFA<br>
+                    </button>
+                    <button class="gmButton" id="gmButton_HG">
+                        Hunger<br>
+                        Games<br>
+                    </button>
+                </div>
+
+                <!--</button>
                 
                     <button class="gmButton" id="gmButton_1V1TOUR">
                     1 VS 1<br>
                     Tournament<br>
-                    -->
-                </button>
-                <select id="normalServerSelect"><option disabled="" class="normalServerSelectList">EUROPE</option><option class="normalServerSelectList">EUROPE 1 [-2 players ]</option></select>
+                  
+                </button>  -->
+                <select id="normalServerSelect">
+                    <option disabled="">LOADING SERVERS..</option>
+                </select>
 
                 <div id="onconnectDiv" style="visibility: visible;">
                     <br>
 
 
-                    <div id="nickInputContainer" style="display: none;">
-                        <input id="nickInput" autofocus="" placeholder="Your name" maxlength="15" style="width: 100%; height: 40px; line-height: 36px;">
+                    <div id="nickInputContainer" style="display: block;">
+                        <input id="nickInput" autofocus="" placeholder="Your name" maxlength="16"
+                            style="width: 100%; height: 40px; line-height: 36px;">
                         <a>
 
                             <button id="startButton">Play</button>
@@ -172,72 +290,119 @@
                     </div>
 
                     <div class="optionsBtn">
-                        <button id="settingsButton" class="button" type="submit" style="background-color:transparent; border-color:transparent;">
+
+                        <button id="settingsButton" class="button" type="submit"
+                            style="background-color:transparent; border-color:transparent;">
                             <img src="./img/settings.png" width="30" height="30">
+
                         </button>
+                        <button id="button_mute" class="button" type="submit"
+                            style="background-color:transparent; border-color:transparent;">
+                            <img id="button_mute_img" src="./img/sound_off.png" width="30" height="30">
+
+                        </button>
+
                     </div>
-                    <div id="captcha-1" style="display: block;"><iframe src="https://newassets.hcaptcha.com/captcha/v1/48ebaaf/static/hcaptcha.html#frame=checkbox&amp;id=08ugibyo7r0n&amp;host=old-mope.netlify.app&amp;sentry=true&amp;reportapi=https%3A%2F%2Faccounts.hcaptcha.com&amp;recaptchacompat=true&amp;custom=false&amp;hl=en&amp;tplinks=on&amp;sitekey=f8c53026-dfdf-4214-882b-223aab09ec1c&amp;theme=light&amp;origin=https%3A%2F%2Fold-mope.netlify.app" tabindex="0" frameborder="0" scrolling="no" title="Widget containing checkbox for hCaptcha security challenge" data-hcaptcha-widget-id="08ugibyo7r0n" data-hcaptcha-response="" style="width: 303px; height: 78px; overflow: hidden;"></iframe><textarea id="g-recaptcha-response-08ugibyo7r0n" name="g-recaptcha-response" style="display: none;"></textarea><textarea id="h-captcha-response-08ugibyo7r0n" name="h-captcha-response" style="display: none;"></textarea></div>
+                    <p id="spawnXpLabel" style="display: none;"></p>
+                    <p id="serverResponse" style="display: none; opacity: 0;"></p>
 
-                    <p id="spawnXpLabel" style="display: none; opacity: 1;"></p>
-                    <p id="serverResponse" style="display: block; opacity: 1;">Please Verify Captcha</p>
-
-                    <a class="advert" href="https://discord.gg/4yZCGETucK" width="300px" height="180px" target="_blank">
-                        <img src="./img/banner.png" width="100%" height="100%"></a>
+                    <div id="captcha-1"></div>
 
                 </div>
-                <div id="optionsDiv" style="display: none;">
-                    <button id="closeBut" type="submit" class="button" style="background-color:transparent; border-color:transparent;">
+
+
+                <div id="optionsDiv">
+                    <button id="closeBut" type="submit" class="button"
+                        style="background-color:transparent; border-color:transparent;">
                         <img src="./img/x.png" width="35" height="35">
                     </button>
-                    <!-- 
-                <h3>Region/Server:</h3>
-                <select id="regionSelect">
-                    <option disabled="">LOADING SERVERS..</option>
-                </select>
-                <select id="serverSelect">
-                    <option disabled="">LOADING SERVERS..</option>
-                
-                </select>
-                -->
+
                     <h3>Options:</h3>
                     <div id="optionsContainer">
 
-                    <label><input type="checkbox" id="options_noImages"><span style="color: black;" '="">No Animal images  </span></label><label><input type="checkbox" id="options_noNames"><span style="color: black;" '="">No Names &amp; Chat  </span></label><label><input type="checkbox" id="options_lowGraphics"><span style="color: black;" '="">Use Low graphics </span></label><label><input type="checkbox" id="options_disableSnowFall"><span style="color: black;" '="">Disable Snowfall </span></label><label><input type="checkbox" id="options_noXpPopup"><span style="color: black;" '="">Don't show +XP popups</span></label><label><input type="checkbox" id="options_noImages"><span style="color: black;" '="">No Animal images  </span></label><label><input type="checkbox" id="options_noNames"><span style="color: black;" '="">No Names &amp; Chat  </span></label><label><input type="checkbox" id="options_lowGraphics"><span style="color: black;" '="">Use Low graphics </span></label><label><input type="checkbox" id="options_disableSnowFall"><span style="color: black;" '="">Disable Snowfall </span></label><label><input type="checkbox" id="options_noXpPopup"><span style="color: black;" '="">Don't show +XP popups</span></label></div>
+                    </div>
                     <br>
                     <a>
                         <button id="btnSpectate" style="display:block">Spectate</button>
                     </a>
                 </div>
             </div>
+            <div id="sessionMenu" style="display: none">
+                <h1>SESSION MENU</h1>
+                <h3 id="nameMenu">Not logged in</h3>
 
+                <div id="unloggedMenu">
+                    <input id="sessionLogin" type="password">
+                </div>
+                <div id="loggedMenu" style="display: none;">
+                    <h3 id="xpTokens">...</h3>
+                    <div id="colorNames">
+                        <h2 id="nameMenu">COLOR NAME :</h2>
+                        <select id="colorChoice">
+                        </select>
+
+                    </div>
+                    <button id="logoutButton">Logout</button>
+                </div>
+                <button id="btnSession">Login</button>
+                <li id="nameMenu">sharing / using a session token will get you banned permenantly.</li>
+            </div>
+            <a id="advert" href="https://discord.gg/PvEwRZ8k49" target="_blank">
+                <img src="./img/banner.png" width="100%" height="100%"></a>
 
         </div>
 
-        <div id="rightSide" style="display: none;">
-            <div id="appsDiv">
+
+        <div id="rulesDiv">
+
+            <h2>INGAME RULES</h2>
+            <ul>
+                <li>Don't beg for animals or advantages to administrators, administrators will be allowed to kill you if
+                    you beg.</li>
+                <li>If you die while following or disturbing an administrator, don't be shocked, we won't protect you.
+                </li>
+                <li>Any exploitation of game-breaking bug(xp, crash, menu crash) can get you disconnected or temporarily
+                    banned.
+                </li>
+                <li>Use common sense, (trying to avoid filter, trying to go around the rules, doing something that looks
+                    completly against.) will get you punished.
+                </li>
+                <li>Hate crimes/ Threats are also disallowed. we have logs to see who chatted what, so watch out for now
+                    and keep your tongue safe.</li>
+                <li>INFO : Not all colored names individual are DEVELOPERS.
+                </li>
+            </ul>
+        </div>
+        <!-- <div id="appsDiv">
                 <a id="appAdIOS" href="https://goo.gl/ofAUPJ" target="_blank">
                     <img src="./img/appAd_ios.png" width="132" height="82" alt="GET THE IOS APP!">
                 </a>
                 <a id="appAdAndroid" href="https://goo.gl/i3xQWQ" target="_blank">
                     <img src="./img/appAd_and.png" width="132" height="52" alt="GET THE Android APP!">
                 </a>
-            </div>
-        </div>
+            </div>-->
+
 
     </div>
 
-
+    <script type="text/javascript">
+        (function (g, a, m, e, A, d, s) {
+            g[A] = g[A] || function () { (g[A].s = g[A].s || []).push(arguments) };
+            g[A].l = 1 * new Date(); d = a.createElement("script"), s = a.getElementsByTagName("script")[0], d.async = 1, d.src = e + "?objid=" + m + "&jsdate=" + (+new Date()) + "&lang=" + g.navigator.language + "&rfunc=" + A + "&fromhost=" + g.location.hostname + "&refr=" + a.referrer + "", s.parentNode.insertBefore(d, s)
+        })
+            (window, document, "gameadsbanner", "https://n.gameads.io/getcode", "GameAdsRenew");
+    </script>
     <script>
+
         document.write("<script src='config.js?x=" + (+new Date()) + "'></" + "script>");
         document.write("<script src='client.js?x=" + (+new Date()) + "'></" + "script>");
-    </script><script src="config.js?x=1672809589471"></script><script src="client.js?x=1672809589471"></script><div class="adsbox">&nbsp;</div><script src="config.js?x=1672176119835"></script><script src="client.js?x=1672176119836"></script>
-    <script src="https://js.hcaptcha.com/1/api.js?onload=loadedCaptcha&amp;render=explicit" async="" defer=""></script>
+    </script>
+    <script src="https://js.hcaptcha.com/1/api.js?onload=loadedCaptcha&render=explicit" async defer></script>
 
 
 
 
 
+</body>
 
-
-<div style="background-color: rgb(255, 255, 255); border: 1px solid rgb(215, 215, 215); box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 4px; border-radius: 4px; left: auto; top: -10000px; z-index: -2147483648; position: absolute; transition: opacity 0.15s ease-out 0s; opacity: 0; visibility: hidden; display: block;" aria-hidden="true"><div style="position: relative; z-index: 1; width: 400px; height: 590px;"><iframe src="https://newassets.hcaptcha.com/captcha/v1/48ebaaf/static/hcaptcha.html#frame=challenge&amp;id=08ugibyo7r0n&amp;host=old-mope.netlify.app&amp;sentry=true&amp;reportapi=https%3A%2F%2Faccounts.hcaptcha.com&amp;recaptchacompat=true&amp;custom=false&amp;hl=en&amp;tplinks=on&amp;sitekey=f8c53026-dfdf-4214-882b-223aab09ec1c&amp;theme=light&amp;origin=https%3A%2F%2Fold-mope.netlify.app" frameborder="0" scrolling="no" title="Main content of the hCaptcha challenge" style="border: 0px; z-index: 2000000000; position: relative; width: 400px; height: 590px;"></iframe></div><div style="width: 100%; height: 100%; position: fixed; pointer-events: none; top: 0px; left: 0px; z-index: 0; background-color: rgb(255, 255, 255); opacity: 0.05; cursor: default;"></div><div style="border-width: 11px; position: absolute; pointer-events: none; margin-top: -11px; z-index: 1; right: 100%; top: 196.4px;"><div style="border-width: 10px; border-style: solid; border-color: transparent rgb(255, 255, 255) transparent transparent; position: relative; top: 10px; z-index: 1; display: block;"></div><div style="border-width: 11px; border-style: solid; border-color: transparent rgb(215, 215, 215) transparent transparent; position: relative; top: -11px; z-index: 0; display: block;"></div></div></div>
-</body></html>
+</html>

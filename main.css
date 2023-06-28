@@ -131,22 +131,22 @@ ul {
     color: #fff
 }
 
-.advert {
+#advert {
     display: block;
-    margin: auto;
     left: 0;
     right: 0;
-    bottom: -50px;
+    margin: auto;
     position: relative;
     border-radius: 8px;
     z-index: 10;
-    overflow: visible;
-
+    width: 300px;
+    height: 180px;
+    bottom: -20px;
 }
 
 
 
-.advert img {
+#advert img {
     border: 0 solid #ccc;
     border-style: solid;
     border-width: 4px 4px 4px 4px;
@@ -156,7 +156,7 @@ ul {
     border-color: #0aa633;
 }
 
-.advert img:hover {
+#advert img:hover {
     border-color: #3ce747;
 }
 
@@ -180,7 +180,8 @@ ul {
     top: 0;
     left: 0;
     right: 0;
-    height: 500px;
+    bottom: 0;
+    height: 800px;
     border-radius: 8px;
     z-index: 10;
     text-align: center
@@ -415,7 +416,8 @@ ul {
     width: 290px;
     margin: 0 auto;
     margin-top: -20px;
-    margin-left: 20px
+    margin-left: 20px;
+    flex-direction: column
 }
 
 #normalServerSelect {
@@ -430,6 +432,12 @@ ul {
     background: #3fba54;
     border-width: 3px;
     border-color: #1f9a1f
+}
+
+#optionsContainer {
+    display: flex;
+    flex-direction: column;
+    color: #FFF
 }
 
 .normalServerSelectList {
@@ -483,7 +491,7 @@ ul {
     text-shadow: 1px 1px #000;
     overflow: hidden;
     opacity: 1;
-    position: absolute;
+    position: relative;
     width: 500px;
     margin-left: -78px
 }
@@ -494,14 +502,17 @@ ul {
 }
 
 #logo {
+    position: relative;
     color: #fff;
-    margin: 0;
+    left: 0;
+    right: 0;
     font-size: 75px;
     text-align: center;
     text-shadow: 3px 3px #000;
     white-space: nowrap;
     overflow: visible;
-    margin-top: 0
+    margin-top: 0;
+    top: 5%;
 }
 
 #updatesDiv {
@@ -534,8 +545,57 @@ li {
     font-size: 12px;
     color: #095a00;
     margin: 0;
-    text-shadow: 1px 1px rgba(0, 0, 0, .51)
+    text-shadow: 1px 1px rgba(0, 0, 0, .51);
+
 }
+
+#gameadsbanner {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin-right: 20px;
+    margin-top: 20px;
+    padding: 10px;
+    z-index: 100;
+    font-size: 10px;
+    border-width: 10px;
+    border-radius: 8px;
+}
+
+
+#rulesDiv {
+    position: absolute;
+    transform-origin: bottom right;
+    right: 0;
+    bottom: 0;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+    z-index: 5;
+    width: 200px;
+    min-height: 150px;
+    max-height: 400px;
+    font-size: 10px;
+    background-color: rgba(9, 153, 47, .28);
+    border-radius: 8px;
+
+}
+
+#rulesDiv p,
+#rulesDiv li {
+    font-size: 12px;
+    color: #ffd342;
+    text-shadow: 1px 1px rgba(0, 0, 0, .52)
+}
+
+#rulesDiv h2 {
+    font-size: 18px;
+    text-align: center;
+    color: #ffffff;
+    margin: 0;
+    text-shadow: 1px 1px rgba(0, 0, 0, .51);
+}
+
 
 #howToPlayDiv {
     position: relative;
@@ -645,9 +705,8 @@ li {
 #rightSide {
     height: 100%;
     width: 160px;
-    position: absolute;
-    right: 0;
-    top: 0
+    position: relative;
+    float: right;
 }
 
 #shareDiv {
@@ -727,6 +786,10 @@ li {
 @media all and (max-width:720px) {
     #howToPlayDiv {
         display: none
+    }
+
+    #rulesDiv {
+        display: none !important
     }
 
     #updates {
@@ -835,6 +898,7 @@ li {
 
 #updates {
     position: relative;
+    transform-origin: top left;
     margin-left: 17px;
     margin-top: 20px;
     z-index: 11;
@@ -1029,6 +1093,121 @@ li {
 }
 
 #mopeMenu {
+    background-color: rgba(9, 153, 47, .28);
+    padding: 10px;
+    border-radius: 20px;
     max-width: 350px;
-    margin: 0 auto
+    height: fit-content;
+    margin: 0 auto;
+    top: 50%;
+    margin-top: 60px;
+}
+
+
+#colorChoice {
+    background-color: #136b0b;
+    text-align: center;
+    width: 125px;
+    height: 25px;
+    border: solid 0px rgb(235, 235, 235);
+    border-radius: 5px;
+    font-weight: 700;
+}
+
+#sessionMenu {
+    position: absolute;
+    width: 280px;
+    max-height: 350px;
+    padding: 10px;
+    background-color: rgba(9, 153, 47, .28);
+    z-index: 5;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) translate(350px, -80px);
+    border-radius: 20px;
+
+}
+
+#sessionMenu h1 {
+    color: gold;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+#sessionMenu h2 {
+    color: #095a00;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+#sessionMenu h3 {
+    color: white;
+    font-size: 17px;
+    font-weight: 100;
+    text-shadow: 1px 1px rgba(0, 0, 0, .52)
+}
+
+#sessionLogin {
+    box-sizing: border-box;
+    width: 220px;
+    height: 30px;
+    text-align: center;
+    padding: 5px;
+    border: solid 0px rgb(235, 235, 235);
+    color: #000;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    outline: none;
+    background-color: #fff;
+    font-size: 20px
+}
+
+#btnSession {
+    font-size: 1.2em;
+
+    box-sizing: border-box;
+    width: 110px;
+    height: 30px;
+    margin-top: 20px;
+    cursor: pointer;
+    text-align: center;
+    font-weight: 700;
+    color: #fff;
+    border-color: hwb(22 10% 19%);
+    border-bottom: 4px solid hwb(22 7% 39%);
+    background: hwb(22 8% 5%);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, .25);
+}
+
+#logoutButton {
+    font-size: 1.2em;
+
+    box-sizing: border-box;
+    width: 110px;
+    height: 30px;
+    margin-top: 20px;
+    cursor: pointer;
+    text-align: center;
+    font-weight: 700;
+    color: #fff;
+    border-color: hwb(0 10% 19%);
+    border-bottom: 4px solid hwb(0 7% 39%);
+    background: hwb(0 8% 5%);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, .25);
+}
+
+#sessionMenu li {
+    font-size: 15px;
+    margin-top: 20px;
+}
+
+.disable-button {
+    pointer-events: none;
+    opacity: 0.5;
 }
